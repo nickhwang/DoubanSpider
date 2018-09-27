@@ -37,7 +37,7 @@ for li in lis:
     }
     movies.append(movie)
     
-#Print Date
+#Print data
 print(movies)
 
 
