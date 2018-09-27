@@ -1,7 +1,7 @@
 import requests
 from lxml import etree
 
-#1.請求網頁並把網頁數據爬取下來
+#1.Request a web page and crawl the web page data
 url = 'https://movie.douban.com/cinema/nowplaying/guangzhou/'
 
 headers = {
@@ -12,7 +12,7 @@ headers = {
 response = requests.get(url,headers=headers)
 text = response.text
 
-#2制定規則爬取想要的數據
+#2.Make rules to crawl the data you want
 html = etree.HTML(text)
 uls = html.xpath('//ul[@class="lists"]')[0]
 lis = uls.xpath('./li')
@@ -37,7 +37,7 @@ for li in lis:
     }
     movies.append(movie)
     
-#打印數據
+#Print Date
 print(movies)
 
 
